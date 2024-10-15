@@ -112,7 +112,7 @@ func main() {
 
 	if _, err := os.Stat(closureLibraryDir); os.IsNotExist(err) {
 		fmt.Println("\nDownloading Closure library...")
-		runCommand("git", "clone", "https://github.com/google/closure-library", closureLibraryDir)
+		runCommand("git", "clone", "https://github.com/google/closure-library --branch v20170409", closureLibraryDir)
 	}
 
 	_, errD := os.Stat(closureCompilerDir)

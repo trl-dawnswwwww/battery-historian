@@ -121,5 +121,5 @@ func main() {
 	analyzer.SetResVersion(*resVersion)
 	analyzer.SetIsOptimized(*optimized)
 	log.Println("Listening on port: ", *port)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", *port), nil))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf("0.0.0.0:%d", *port), nil))
 }
