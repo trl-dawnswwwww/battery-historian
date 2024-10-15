@@ -6,7 +6,7 @@ Battery Historian is a tool to inspect battery related information and events on
 
 #### Using Docker
 
-Install [Docker](<https://docs.docker.com/engine/installation/>).
+Install [Docker](https://docs.docker.com/engine/installation/).
 
 Run the Battery Historian image. Choose a port number and replace `<port>` with
 that number in the commands below:
@@ -17,41 +17,42 @@ docker -- run -p <port>:9999 gcr.io/android-battery-historian/stable:3.0 --port 
 
 For Linux and Mac OS X:
 
-* That's it, you're done! Historian will be available at
+- That's it, you're done! Historian will be available at
   `http://localhost:<port>`.
 
 For Windows:
 
-* You may have to [enable Virtualization in your
-  BIOS](<http://www.itworld.com/article/2981515/virtualization/virtualbox-diagnose-and-fix-vt-xamd-v-hardware-acceleration-errors.html>).
+- You may have to [enable Virtualization in your
+  BIOS](http://www.itworld.com/article/2981515/virtualization/virtualbox-diagnose-and-fix-vt-xamd-v-hardware-acceleration-errors.html).
 
-* Once you start Docker, it should tell you the IP address of the machine it is
-using. If, for example, the IP address is 123.456.78.90, Historian will be
-available at `http://123.456.78.90:<port>`.
+- Once you start Docker, it should tell you the IP address of the machine it is
+  using. If, for example, the IP address is 123.456.78.90, Historian will be
+  available at `http://123.456.78.90:<port>`.
 
 For more information about the port forwarding, see the [Docker
-documentation](<https://docs.docker.com/engine/reference/run/#/expose-incoming-ports>).
+documentation](https://docs.docker.com/engine/reference/run/#/expose-incoming-ports).
 
 #### Building from source code
 
 Make sure you have at least Golang version 1.8.1:
 
-* Follow the instructions available at <http://golang.org/doc/install> for downloading and installing the Go compilers, tools, and libraries.
-* Create a workspace directory according to the instructions at
+- Follow the instructions available at <http://golang.org/doc/install> for downloading and installing the Go compilers, tools, and libraries.
+- Create a workspace directory according to the instructions at
   <http://golang.org/doc/code.html#Organization>.
-* Ensure that `GOPATH` and `GOBIN` environment variables are appropriately set and added to your `$PATH`
+- Ensure that `GOPATH` and `GOBIN` environment variables are appropriately set and added to your `$PATH`
   environment variable. `$GOBIN should be set to $GOPATH/bin`.
-  * For Windows, you may set environment variables through the "Environment Variables" button on the
-  "Advanced" tab of the "System" control panel. Some versions of Windows provide this control panel
-  through the "Advanced System Settings" option inside the "System" control panel.
-  * For Linux and Mac OS X, you can add the following lines to your ~/.bashrc or
+
+  - For Windows, you may set environment variables through the "Environment Variables" button on the
+    "Advanced" tab of the "System" control panel. Some versions of Windows provide this control panel
+    through the "Advanced System Settings" option inside the "System" control panel.
+  - For Linux and Mac OS X, you can add the following lines to your ~/.bashrc or
     ~/.profile files (assuming your workspace is $HOME/work):
 
-      ```
-      export GOPATH=$HOME/work
-      export GOBIN=$GOPATH/bin
-      export PATH=$PATH:$GOBIN
-      ```
+    ```
+    export GOPATH=$HOME/work
+    export GOBIN=$GOPATH/bin
+    export PATH=$PATH:$GOBIN
+    ```
 
 Next, install Git from <https://git-scm.com/downloads> if it's not already installed.
 
@@ -85,10 +86,23 @@ cd $GOPATH/src/github.com/google/battery-historian
 go run cmd/battery-historian/battery-historian.go [--port <default:9999>]
 ```
 
+#### Run Dev
+
+Make sure you have at least Golang version 1.8.1:
+
+```
+$ sh ./setup.sh
+
+$ sh ./start.sh
+
+
+every time you modify js file, you should rerun **sh ./setup.sh** to compiler js file.
+
+```
 
 #### How to take a bug report
 
-To take a bug report from your Android device, you will need to enable USB debugging under `Settings > System > Developer Options`. On Android 4.2 and higher, the Developer options screen is hidden by default. You can enable this by following the instructions [here](<http://developer.android.com/tools/help/adb.html#Enabling>).
+To take a bug report from your Android device, you will need to enable USB debugging under `Settings > System > Developer Options`. On Android 4.2 and higher, the Developer options screen is hidden by default. You can enable this by following the instructions [here](http://developer.android.com/tools/help/adb.html#Enabling).
 
 To obtain a bug report from your development device running Android 7.0 and
 higher:
@@ -265,7 +279,6 @@ $ go run cmd/history-parse/local_history_parse.go --summary=totalTime --input=bu
 $ go run cmd/checkin-delta/local_checkin_delta.go --input=bugreport_1.txt,bugreport_2.txt
 ```
 
-
 ## Support
 
 - G+ Community (Discussion Thread: Battery Historian): https://plus.google.com/b/108967384991768947849/communities/114791428968349268860
@@ -281,10 +294,10 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  <http://www.apache.org/licenses/LICENSE-2.0>
+<http://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 License for the specific language governing permissions and limitations under
 the License.
